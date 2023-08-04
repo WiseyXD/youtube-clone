@@ -21,7 +21,10 @@ export default function Header() {
 					className="w-1/12"
 				/>
 			</div>
-			<div className="basis-1/2  text-center">
+			<div
+				className="basis-1/2 
+			text-center"
+			>
 				<input
 					type="text"
 					placeholder="Search.."

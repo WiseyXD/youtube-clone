@@ -7,7 +7,7 @@ export default function SideBar() {
 		return null;
 	}
 	return (
-		<div>
+		<div className="basis-1/4 border border-x-cyan-500">
 			<ul className="">
 				<li className="font-bold">Subscription</li>
 				<li className="font-bold">Details</li>
