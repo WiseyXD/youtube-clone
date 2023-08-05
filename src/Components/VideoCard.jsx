@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function VideoCard({ info, key }) {
+export default function VideoCard({ info }) {
 	const { snippet, statistics } = info;
 	const { channelTitle, localized, thumbnails, tags } = snippet;
 	const { title } = localized;
+
 	return (
 		<ul className="p-2 mx-2 mb-2 w-56 shadow-2xl rounded-lg">
 			<img src={thumbnails.medium.url} alt="" className="rounded-lg" />
@@ -15,3 +16,7 @@ export default function VideoCard({ info, key }) {
 		</ul>
 	);
 }
+
+// export const AdCard = ({ info }) => {
+// 	return <VideoCard info={info} />;
+// };

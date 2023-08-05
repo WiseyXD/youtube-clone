@@ -7,7 +7,7 @@ export default function SideBar() {
 		return null;
 	}
 	return (
-		<div className=" my-2 px-3">
+		<div className="my-2 px-3">
 			<ul className="text-left">
 				<li className="font-bold ">Subscription</li>
 				<ul>
