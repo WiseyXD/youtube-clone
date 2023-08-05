@@ -7,11 +7,29 @@ export default function SideBar() {
 		return null;
 	}
 	return (
-		<div className="basis-1/4 border border-x-cyan-500">
-			<ul className="">
-				<li className="font-bold">Subscription</li>
-				<li className="font-bold">Details</li>
-				<li className="font-bold">Studio</li>
+		<div className=" my-2 px-3">
+			<ul className="text-left">
+				<li className="font-bold ">Subscription</li>
+				<ul>
+					<li>Sports</li>
+					<li>Gaming</li>
+					<li>Computer Science</li>
+					<li>Music</li>
+				</ul>
+				<li className="font-bold mt-4">Details</li>
+				<ul>
+					<li>Sports</li>
+					<li>Gaming</li>
+					<li>Computer Science</li>
+					<li>Music</li>
+				</ul>
+				<li className="font-bold mt-4">Studio</li>
+				<ul>
+					<li>Sports</li>
+					<li>Gaming</li>
+					<li>Computer Science</li>
+					<li>Music</li>
+				</ul>
 			</ul>
 			<h4 className="font-bold mt-4">Watch Later</h4>
 			<ul>

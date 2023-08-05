@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { isToggle } from "../utils/appSlice";
+import { Link } from "react-router-dom";
 export default function Header() {
 	const dispatch = useDispatch();
 	function handleHamburgerMenu() {
@@ -7,7 +8,7 @@ export default function Header() {
 	}
 
 	return (
-		<div className="flex flex-row justify-center p-5 shadow-xl">
+		<div className="flex flex-row justify-center p-5 shadow-lg">
 			<div className="basis-1/4  text-center flex flex-row gap-4">
 				<img
 					src="https://w7.pngwing.com/pngs/626/110/png-transparent-black-logo-computer-icons-hamburger-button-menu-new-menu-angle-text-rectangle.png"
@@ -15,11 +16,13 @@ export default function Header() {
 					className="w-1/12 cursor-pointer"
 					onClick={() => handleHamburgerMenu()}
 				/>
-				<img
-					src="https://img.freepik.com/free-icon/youtube_318-219826.jpg"
-					alt="Logo"
-					className="w-1/12"
-				/>
+				<a href="/">
+					<img
+						src="https://img.freepik.com/free-icon/youtube_318-219826.jpg"
+						alt="Logo"
+						className="w-1/12"
+					/>
+				</a>
 			</div>
 			<div
 				className="basis-1/2 

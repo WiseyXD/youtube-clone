@@ -1,13 +1,18 @@
 import React from "react";
-
+import ButtonList from "./ButtonList";
 import SideBar from "./SideBar";
+import VideoContainer from "./VideoContainer";
+import { Outlet } from "react-router-dom";
+
 export default function Body() {
 	return (
-		<div className="flex flex-row">
-			<div>
+		<div className="flex">
+			<div className="">
 				<SideBar />
 			</div>
-			<div className="basis-3/4 border border-red-700 w-56">Aryan</div>
+			<div className="max-w-screen-2xl w-4/5 my-0 mx-auto">
+				<Outlet />
+			</div>
 		</div>
 	);
 }
