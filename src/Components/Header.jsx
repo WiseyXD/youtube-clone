@@ -1,18 +1,24 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { isToggle } from "../utils/appSlice";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 import { YOUTUBE_SEARCH_API } from "../utils/constant";
 import { useEffect, useState } from "react";
+import store from "../utils/store";
+import { cacheResults } from "../utils/searchSlice";
 export default function Header() {
 	const [search, setSearch] = useState("");
 	const [suggestions, setSuggestions] = useState([]);
 	const [showSuggestions, setShowSuggestions] = useState(false);
 	const dispatch = useDispatch();
-
+	const searchCache = useSelector((store) => store.search);
 	useEffect(() => {
 		if (search === "") {
 			return;
 		}
+
+		// if (searchCache[search]) {
+		// 	setSuggestions(searchCache[search]);
+		// }
 		const timer = setTimeout(() => handleSearch(), 200);
 
 		return () => {
@@ -29,6 +35,7 @@ export default function Header() {
 		const resp = await data.json();
 		console.log(resp.items);
 		setSuggestions(resp.items);
+		// dispatch(cacheResults({ [search]: resp.items[1].snippet.title }));
 	}
 
 	function handleSubmit() {}
