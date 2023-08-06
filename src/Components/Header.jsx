@@ -78,11 +78,14 @@ export default function Header() {
 				</div>
 			</div>
 			{showSuggestions && (
-				<div className="flex w-[100%] justify-center z-10 absolute">
+				<div className="flex w-[100%] justify-center z-10 absolute py-0 my-0">
 					<ul className=" bg-white w-[35%]">
 						{suggestions.map((s) => {
 							return (
-								<li className="px-2" key={s.snippet.title}>
+								<li
+									className="px-2 hover:bg-gray-300 py-1"
+									key={s.snippet.title}
+								>
 									{s.snippet.title}
 								</li>
 							);
