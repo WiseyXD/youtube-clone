@@ -20,8 +20,8 @@ function App() {
 					path: "/",
 					element: (
 						<>
-							<VideoContainer />
 							<ButtonList />
+							<VideoContainer />
 						</>
 					),
 				},
