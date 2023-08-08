@@ -48,5 +48,5 @@ export default function CommentsContainer() {
 		},
 	];
 
-	return <div>Comments</div>;
+	return <div className="font-bold text-2xl">Comments :</div>;
 }
