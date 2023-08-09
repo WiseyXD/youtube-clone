@@ -1,7 +1,8 @@
 import React from "react";
+import CommentList from "./CommentList";
 
 export default function CommentsContainer() {
-	const comments = [
+	const commentsData = [
 		{
 			name: "Aryan",
 			text: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nulla, voluptates minus vero doloribus laboriosam.",
@@ -35,6 +36,21 @@ export default function CommentsContainer() {
 									text: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nulla, voluptates minus vero doloribus laboriosam.",
 									replies: [],
 								},
+								{
+									name: "Aryan",
+									text: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nulla, voluptates minus vero doloribus laboriosam.",
+									replies: [],
+								},
+								{
+									name: "Aryan",
+									text: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nulla, voluptates minus vero doloribus laboriosam.",
+									replies: [],
+								},
+								{
+									name: "Aryan",
+									text: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nulla, voluptates minus vero doloribus laboriosam.",
+									replies: [],
+								},
 							],
 						},
 					],
@@ -48,5 +64,10 @@ export default function CommentsContainer() {
 		},
 	];
 
-	return <div className="font-bold text-2xl">Comments :</div>;
+	return (
+		<div className="w-[1100px]">
+			<p className="text-2xl font-bold">Comments: </p>
+			<CommentList comments={commentsData} />
+		</div>
+	);
 }

@@ -2,19 +2,25 @@ import { useEffect, useState } from "react";
 import { YOUTUBE_API } from "../utils/constant";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 export default function VideoContainer() {
 	const [videos, setVideos] = useState([]);
+	const dispatch = useDispatch();
+	let searchVideos = useSelector((store) => store.video);
 
 	async function getVideos() {
 		const data = await fetch(YOUTUBE_API);
 		const resp = await data.json();
-		console.log(resp);
+
 		setVideos(resp.items);
 	}
 	useEffect(() => {
 		getVideos();
 	}, []);
-	console.log(videos);
+	useEffect(() => {
+		setVideos(searchVideos);
+	}, [searchVideos]);
+
 	return (
 		<div className="flex flex-wrap gap-3">
 			{videos.map((vid) => {

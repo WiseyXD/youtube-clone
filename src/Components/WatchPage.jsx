@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { hideHamburger } from "../utils/appSlice";
 import { useSearchParams } from "react-router-dom";
+import CommentsContainer from "./CommentsContainer";
 
 export default function WatchPage() {
 	const dispatch = useDispatch();
@@ -23,6 +24,7 @@ export default function WatchPage() {
 				allowFullScreen
 				className="mt-3"
 			></iframe>
+			<CommentsContainer />
 		</div>
 	);
 }

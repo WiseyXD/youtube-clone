@@ -5,6 +5,7 @@ import { YOUTUBE_SEARCH_API } from "../utils/constant";
 import { useEffect, useState } from "react";
 import store from "../utils/store";
 import { cacheResults } from "../utils/searchSlice";
+import { searchVideos } from "../utils/videoSlice";
 export default function Header() {
 	const [search, setSearch] = useState("");
 	const [suggestions, setSuggestions] = useState([]);
@@ -38,7 +39,10 @@ export default function Header() {
 		// dispatch(cacheResults({ [search]: resp.items[1].snippet.title }));
 	}
 
-	function handleSubmit() {}
+	function handleSubmit(e) {
+		e.preventDefault;
+		dispatch(searchVideos(suggestions));
+	}
 	return (
 		<>
 			<div className="flex flex-row justify-center p-5 shadow-lg -z-10">
@@ -70,8 +74,9 @@ export default function Header() {
 						onBlur={() => setShowSuggestions(false)}
 					/>
 					<button
-						onClick={handleSubmit}
+						onClick={(e) => handleSubmit(e)}
 						className="border-black border rounded-r-full px-2 py-1.5"
+						type="submit"
 					>
 						Search
 					</button>

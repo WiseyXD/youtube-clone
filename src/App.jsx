@@ -10,7 +10,6 @@ import ButtonList from "./Components/ButtonList";
 import WatchPage from "./Components/WatchPage";
 
 function App() {
-	const [count, setCount] = useState(0);
 	const appRouter = createBrowserRouter([
 		{
 			path: "/",
