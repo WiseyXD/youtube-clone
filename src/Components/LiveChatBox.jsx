@@ -17,7 +17,7 @@ export default function LiveChatBox() {
 					message: "JSR",
 				})
 			);
-		}, 3000);
+		}, 1500);
 
 		return () => clearInterval(timer);
 	}, []);
