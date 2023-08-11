@@ -7,7 +7,7 @@ export default function VideoContainer() {
 	const [videos, setVideos] = useState([]);
 	const dispatch = useDispatch();
 	let searchVideos = useSelector((store) => store.video);
-	//Comment
+
 	async function getVideos() {
 		const data = await fetch(YOUTUBE_API);
 		const resp = await data.json();
