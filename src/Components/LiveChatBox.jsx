@@ -35,7 +35,7 @@ export default function LiveChatBox() {
 				})}
 			</div>
 			<form
-				className=" flex mt-1"
+				className="flex mt-1"
 				onSubmit={(e) => {
 					e.preventDefault();
 					newChat !== "" &&
