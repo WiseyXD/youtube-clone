@@ -38,22 +38,24 @@ export default function LiveChatBox() {
 				className=" flex"
 				onSubmit={(e) => {
 					e.preventDefault();
-					dispatch(
-						addMessage({
-							name: "Aryan Nagbanshi",
-							message: newChat,
-						})
-					);
+					newChat !== "" &&
+						dispatch(
+							addMessage({
+								name: "Aryan Nagbanshi",
+								message: newChat,
+							})
+						);
 					setNewChat("");
 				}}
 			>
 				<input
-					type="text"
-					className="border border-black basis-3/4 rounded-full"
+					className="border border-black basis-3/4 rounded-full px-3 py-1"
 					onChange={(e) => {
 						setNewChat(e.target.value);
 					}}
 					value={newChat}
+					maxLength={14}
+					minLength={1}
 				/>
 				<button
 					type="submit"
