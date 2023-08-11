@@ -22,8 +22,8 @@ export default function LiveChatBox() {
 		return () => clearInterval(timer);
 	}, []);
 	return (
-		<div className="flex flex-col">
-			<div className="mt-3 h-[600px] w-[425px] flex flex-col-reverse overflow-y-scroll">
+		<div className="flex flex-col border border-black rounded-lg mt-1">
+			<div className="mt-3 h-[580px] w-[425px] flex flex-col-reverse overflow-y-scroll">
 				{messageData.map((message, index) => {
 					return (
 						<LiveMessage
@@ -35,7 +35,7 @@ export default function LiveChatBox() {
 				})}
 			</div>
 			<form
-				className=" flex"
+				className=" flex mt-1"
 				onSubmit={(e) => {
 					e.preventDefault();
 					newChat !== "" &&
