@@ -10,6 +10,7 @@ import Logo from "../assets/Logo.jpg";
 import Hamburger from "../assets/Hamburger.png";
 import { BiUserCircle } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { RxCross2 } from "react-icons/rx";
 
 export default function Header() {
 	const [search, setSearch] = useState("");
@@ -17,6 +18,8 @@ export default function Header() {
 	const [showSuggestions, setShowSuggestions] = useState(false);
 	const dispatch = useDispatch();
 	const searchCache = useSelector((store) => store.search);
+	const hamburgerMenu = useSelector((store) => store.app.isMenuOpen);
+
 	useEffect(() => {
 		if (search === "") {
 			return;
@@ -53,11 +56,19 @@ export default function Header() {
 		<>
 			<div className="flex justify-center items-center px-3 py-1 shadow-xl -z-10">
 				<div className=" flex flex-row gap-4 basis-1/4  text-center items-center sm:gap-6">
-					<RxHamburgerMenu
-						size={30}
-						onClick={() => handleHamburgerMenu()}
-						className="self-center cursor-pointer"
-					/>
+					{!hamburgerMenu ? (
+						<RxHamburgerMenu
+							size={30}
+							onClick={() => handleHamburgerMenu()}
+							className="self-center cursor-pointer "
+						/>
+					) : (
+						<RxCross2
+							size={30}
+							onClick={() => handleHamburgerMenu()}
+							className="self-center cursor-pointer"
+						/>
+					)}
 
 					<a href="/">
 						<img src={Logo} className="w-36 align-middle " />

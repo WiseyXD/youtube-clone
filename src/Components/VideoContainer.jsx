@@ -23,7 +23,7 @@ export default function VideoContainer() {
 	}, [searchVideos]);
 
 	return (
-		<div className="lg:grid lg:grid-cols-4 lg:grid-rows-4 md:grid md:grid-cols-3 md:grid-rows-3 sm:grid sm:grid-cols-2 sm:grid-rows-2 grid grid-cols-1 gap-3">
+		<div className="lg:grid lg:grid-cols-4 lg:grid-rows-4 md:grid md:grid-cols-3 md:grid-rows-3 sm:grid sm:grid-cols-2 sm:grid-rows-2 grid grid-cols-1 gap-3 group-hover:">
 			{videos.map((vid) => {
 				return (
 					<Link key={vid.id} to={"/watch?v=" + vid.id}>
