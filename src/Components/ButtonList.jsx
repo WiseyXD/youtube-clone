@@ -20,10 +20,12 @@ export default function ButtonList() {
 		"Martial Arts",
 	];
 	return (
-		<div className="flex ">
-			{names.map((name) => {
-				return <Button name={name} key={name} />;
-			})}
+		<div className="flex relative items-center m-3">
+			<div id="slider" className="">
+				{names.map((name) => {
+					return <Button name={name} key={name} />;
+				})}
+			</div>
 		</div>
 	);
 }

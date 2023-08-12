@@ -2,10 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const videoSlice = createSlice({
 	name: "video",
-	initialState: [],
+	initialState: {
+		vids: [],
+	},
 	reducers: {
 		searchVideos: (state, action) => {
-			state = Object.assign(state, action.payload);
+			state.vids = Object.assign(state.vids, action.payload);
 		},
 	},
 });
