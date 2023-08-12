@@ -57,17 +57,21 @@ export default function Header() {
 			<div className="flex justify-center items-center px-3 py-1 shadow-xl -z-10">
 				<div className=" flex flex-row gap-4 basis-1/4  text-center items-center sm:gap-6">
 					{!hamburgerMenu ? (
-						<RxHamburgerMenu
-							size={30}
-							onClick={() => handleHamburgerMenu()}
-							className="self-center cursor-pointer "
-						/>
+						<button>
+							<RxHamburgerMenu
+								size={30}
+								onClick={() => handleHamburgerMenu()}
+								className="self-center cursor-pointer "
+							/>
+						</button>
 					) : (
-						<RxCross2
-							size={30}
-							onClick={() => handleHamburgerMenu()}
-							className="self-center cursor-pointer"
-						/>
+						<button>
+							<RxCross2
+								size={30}
+								onClick={() => handleHamburgerMenu()}
+								className="self-center cursor-pointer"
+							/>
+						</button>
 					)}
 
 					<a href="/">
