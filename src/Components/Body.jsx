@@ -10,7 +10,7 @@ export default function Body() {
 			<div className="">
 				<SideBar />
 			</div>
-			<div className="max-w-full w-4/5 my-0 mx-auto">
+			<div className="max-w-full w-11/12 my-0 mx-auto">
 				<Outlet />
 			</div>
 		</div>

@@ -65,7 +65,7 @@ export default function CommentsContainer() {
 	];
 
 	return (
-		<div className="w-[1100px]">
+		<div className="w-full ">
 			<p className="text-2xl font-bold">Comments: </p>
 			<CommentList comments={commentsData} />
 		</div>

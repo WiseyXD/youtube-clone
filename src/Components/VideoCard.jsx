@@ -13,7 +13,7 @@ export default function VideoCard({ info }) {
 			<img
 				src={high.url}
 				alt=""
-				className="rounded-lg group-hover:opacity-75"
+				className="rounded-lg group-hover:opacity-75 w-[900px]"
 			/>
 			<li className="text-xl my-2 font-semibold">{title}</li>
 			<li className="my-1">{channelTitle}</li>
