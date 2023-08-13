@@ -23,7 +23,7 @@ export default function LiveChatBox() {
 	}, []);
 	return (
 		<div className="flex flex-col border border-black rounded-lg mt-1">
-			<div className="mt-3 h-[580px] w-[425px] flex flex-col-reverse overflow-y-scroll">
+			<div className="mt-3 h-[200px] sm:h-[580px] flex flex-col-reverse overflow-y-scroll">
 				{messageData.map((message, index) => {
 					return (
 						<LiveMessage

@@ -3,6 +3,8 @@ import { YOUTUBE_API } from "../utils/constant";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { current } from "@reduxjs/toolkit";
+import { passVidInfo } from "../utils/currentVidSLice";
 export default function VideoContainer() {
 	const [videos, setVideos] = useState([]);
 	const dispatch = useDispatch();
@@ -14,6 +16,11 @@ export default function VideoContainer() {
 		console.log(resp.items);
 		setVideos(resp.items);
 	}
+
+	function currentVid(vid) {
+		dispatch(passVidInfo(vid));
+	}
+
 	useEffect(() => {
 		getVideos();
 	}, []);
@@ -26,7 +33,11 @@ export default function VideoContainer() {
 		<div className="lg:grid lg:grid-cols-4 lg:grid-rows-4 md:grid md:grid-cols-3 md:grid-rows-3 sm:grid sm:grid-cols-2 sm:grid-rows-2 grid grid-cols-1 gap-3 group-hover:">
 			{videos.map((vid) => {
 				return (
-					<Link key={vid.id} to={"/watch?v=" + vid.id}>
+					<Link
+						key={vid.id}
+						to={"/watch?v=" + vid.id}
+						onClick={() => currentVid(vid)}
+					>
 						<VideoCard info={vid} />
 					</Link>
 				);

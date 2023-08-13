@@ -8,7 +8,7 @@ export default function CommentList({ comments }) {
 				return (
 					<>
 						<Comments key={index} data={comment} />
-						<div className="pl-5 border-l-4 border-grey-200">
+						<div className="pl-5 border-l-4 border-grey-200 rounded-bl-xl">
 							<CommentList comments={comment.replies} />
 						</div>
 					</>
