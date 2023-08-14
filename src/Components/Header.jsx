@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { isToggle } from "../utils/appSlice";
 import { Link, json } from "react-router-dom";
-import { YOUTUBE_SEARCH_API } from "../utils/constant";
+import { YOUTUBE_SEARCH_API, AUTOCOMPLETE_API } from "../utils/constant";
 import { useEffect, useState } from "react";
 import store from "../utils/store";
 import { cacheResults } from "../utils/searchSlice";
@@ -40,10 +40,10 @@ export default function Header() {
 	}
 
 	async function handleSearch() {
-		const data = await fetch(YOUTUBE_SEARCH_API + search);
+		const data = await fetch(AUTOCOMPLETE_API + search);
 		const resp = await data.json();
 
-		setSuggestions(resp.items);
+		setSuggestions(resp);
 
 		// dispatch(cacheResults({ [search]: resp.items[1].snippet.title }));
 	}
@@ -106,9 +106,9 @@ export default function Header() {
 							return (
 								<li
 									className="px-2 hover:bg-gray-300 py-1"
-									key={s.snippet.title}
+									key={s.word}
 								>
-									{s.snippet.title}
+									{s.word}
 								</li>
 							);
 						})}

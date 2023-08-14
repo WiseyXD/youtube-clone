@@ -11,3 +11,5 @@ export const API_KEY_SUGGESTION =
 	"8a8b771be7743b1d12f490845dfcaa2cc0b544648e5d39f134f31420af4462c1";
 
 export const YOUTUBE_SEARCH_API = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&type=video&part=snippet&maxResults=50&q=`;
+
+export const AUTOCOMPLETE_API = "https://api.datamuse.com/words?max=20&ml=";
