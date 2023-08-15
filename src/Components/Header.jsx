@@ -12,6 +12,7 @@ import { BiUserCircle } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
 
+// TODO  : Add Click on List elemnt to search anything
 export default function Header() {
 	const [search, setSearch] = useState("");
 	const [suggestions, setSuggestions] = useState([]);
